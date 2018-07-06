@@ -12,35 +12,35 @@
   <component name="FileEditorManager">
     <leaf>
       <file leaf-file-name="hmap.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../HashMap/hmap.go">
+        <entry file="file://$PROJECT_DIR$/hmap.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-735">
+            <state relative-caret-position="1196">
               <caret line="46" column="31" lean-forward="true" selection-start-line="46" selection-start-column="31" selection-end-line="46" selection-end-column="31" />
               <folding>
-                <element signature="e#17#44#0" expanded="true" />
+                <element signature="e#14#41#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="hmap_test.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../HashMap/hmap_test.go">
+      <file leaf-file-name="hmap_test.go" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/hmap_test.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="279">
+            <state relative-caret-position="1820">
               <caret line="70" column="26" lean-forward="false" selection-start-line="70" selection-start-column="26" selection-end-line="70" selection-end-column="26" />
               <folding>
-                <element signature="e#17#45#0" expanded="true" />
+                <element signature="e#14#42#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/../HashMap/README.md">
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="-505">
-                <caret line="20" column="4" lean-forward="true" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="4" />
+              <first_editor relative-caret-position="353">
+                <caret line="53" column="1" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="53" selection-end-column="1" />
                 <folding>
                   <marker date="1530848531712" expanded="true" signature="128:179" ph="..." />
                   <marker date="1530848531712" expanded="true" signature="192:889" ph="{...}" />
@@ -50,6 +50,26 @@
                 </folding>
               </first_editor>
               <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/example/main.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="52">
+              <caret line="2" column="30" lean-forward="true" selection-start-line="2" selection-start-column="30" selection-end-line="2" selection-end-column="30" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="hmap.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../github.com/fwhezfwhez/HMap/hmap.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="9" lean-forward="true" selection-start-line="0" selection-start-column="9" selection-end-line="0" selection-end-column="9" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -72,6 +92,8 @@
         <option value="$PROJECT_DIR$/../HashMap/hmap_test.go" />
         <option value="$PROJECT_DIR$/../HashMap/hmap.go" />
         <option value="$PROJECT_DIR$/../HashMap/README.md" />
+        <option value="$PROJECT_DIR$/../HashMap/example/main.go" />
+        <option value="$PROJECT_DIR$/example/main.go" />
       </list>
     </option>
   </component>
@@ -108,7 +130,12 @@
           <expand>
             <path>
               <item name="HMap" type="b2602c69:ProjectViewProjectNode" />
-              <item name="HashMap" type="462c0819:PsiDirectoryNode" />
+              <item name="HMap" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HMap" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HMap" type="462c0819:PsiDirectoryNode" />
+              <item name="example" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -134,13 +161,31 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Go Test.TestHMap_DeleteAll in hmap_test.go">
+  <component name="RunManager" selected="Go Build.go build main.go (1)">
     <configuration default="true" type="GoApplicationRunConfiguration" factoryName="Go Application">
       <module name="HMap" />
       <working_directory value="$PROJECT_DIR$/" />
       <go_parameters value="-i" />
       <kind value="FILE" />
       <filePath value="$PROJECT_DIR$/" />
+      <package value="HMap" />
+      <directory value="$PROJECT_DIR$/" />
+    </configuration>
+    <configuration name="go build main.go (1)" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true">
+      <module name="HMap" />
+      <working_directory value="$PROJECT_DIR$/" />
+      <go_parameters value="-i" />
+      <kind value="FILE" />
+      <filePath value="$PROJECT_DIR$/example/main.go" />
+      <package value="HMap" />
+      <directory value="$PROJECT_DIR$/" />
+    </configuration>
+    <configuration name="go build main.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true">
+      <module name="HMap" />
+      <working_directory value="$PROJECT_DIR$/" />
+      <go_parameters value="-i" />
+      <kind value="FILE" />
+      <filePath value="$PROJECT_DIR$/../HashMap/example/main.go" />
       <package value="HMap" />
       <directory value="$PROJECT_DIR$/" />
     </configuration>
@@ -171,24 +216,6 @@
       <package value="HashMap" />
       <pattern value="^TestHMap_DeleteByMainKey$" />
     </configuration>
-    <configuration name="TestHMap_GetByMainKey in hmap_test.go" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true">
-      <module name="HMap" />
-      <working_directory value="$PROJECT_DIR$/../HashMap" />
-      <go_parameters value="-i" />
-      <framework value="gotest" />
-      <kind value="PACKAGE" />
-      <package value="HashMap" />
-      <pattern value="^TestHMap_GetByMainKey$" />
-    </configuration>
-    <configuration name="TestHMap_Print in hmap_test.go" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true">
-      <module name="HMap" />
-      <working_directory value="$PROJECT_DIR$/../HashMap" />
-      <go_parameters value="-i" />
-      <framework value="gotest" />
-      <kind value="PACKAGE" />
-      <package value="HashMap" />
-      <pattern value="^TestHMap_Print$" />
-    </configuration>
     <configuration default="true" type="GoTestRunConfiguration" factoryName="Go Test">
       <module name="HMap" />
       <working_directory value="$PROJECT_DIR$/" />
@@ -198,19 +225,19 @@
       <package value="HMap" />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Go Test.TestHMap_GetByMainKey in hmap_test.go" />
-      <item index="1" class="java.lang.String" itemvalue="Go Test.TestHMap_Print in hmap_test.go" />
-      <item index="2" class="java.lang.String" itemvalue="Go Test.TestHMap_Delete in hmap_test.go" />
-      <item index="3" class="java.lang.String" itemvalue="Go Test.TestHMap_DeleteByMainKey in hmap_test.go" />
-      <item index="4" class="java.lang.String" itemvalue="Go Test.TestHMap_DeleteAll in hmap_test.go" />
+      <item index="0" class="java.lang.String" itemvalue="Go Test.TestHMap_Delete in hmap_test.go" />
+      <item index="1" class="java.lang.String" itemvalue="Go Test.TestHMap_DeleteByMainKey in hmap_test.go" />
+      <item index="2" class="java.lang.String" itemvalue="Go Test.TestHMap_DeleteAll in hmap_test.go" />
+      <item index="3" class="java.lang.String" itemvalue="Go Build.go build main.go" />
+      <item index="4" class="java.lang.String" itemvalue="Go Build.go build main.go (1)" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Go Test.TestHMap_DeleteAll in hmap_test.go" />
-        <item index="1" class="java.lang.String" itemvalue="Go Test.TestHMap_DeleteByMainKey in hmap_test.go" />
-        <item index="2" class="java.lang.String" itemvalue="Go Test.TestHMap_Delete in hmap_test.go" />
-        <item index="3" class="java.lang.String" itemvalue="Go Test.TestHMap_Print in hmap_test.go" />
-        <item index="4" class="java.lang.String" itemvalue="Go Test.TestHMap_GetByMainKey in hmap_test.go" />
+        <item index="0" class="java.lang.String" itemvalue="Go Build.go build main.go (1)" />
+        <item index="1" class="java.lang.String" itemvalue="Go Build.go build main.go" />
+        <item index="2" class="java.lang.String" itemvalue="Go Test.TestHMap_DeleteAll in hmap_test.go" />
+        <item index="3" class="java.lang.String" itemvalue="Go Test.TestHMap_DeleteByMainKey in hmap_test.go" />
+        <item index="4" class="java.lang.String" itemvalue="Go Test.TestHMap_Delete in hmap_test.go" />
       </list>
     </recent_temporary>
   </component>
@@ -284,31 +311,11 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../HashMap/hmap_test.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
-          <caret line="70" column="26" lean-forward="false" selection-start-line="70" selection-start-column="26" selection-end-line="70" selection-end-column="26" />
-          <folding>
-            <element signature="e#17#45#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../HashMap/hmap.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-735">
-          <caret line="46" column="31" lean-forward="true" selection-start-line="46" selection-start-column="31" selection-end-line="46" selection-end-column="31" />
-          <folding>
-            <element signature="e#17#44#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../HashMap/README.md">
+    <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="-505">
-            <caret line="20" column="4" lean-forward="true" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="4" />
+          <first_editor relative-caret-position="353">
+            <caret line="53" column="1" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="53" selection-end-column="1" />
             <folding>
               <marker date="1530848531712" expanded="true" signature="128:179" ph="..." />
               <marker date="1530848531712" expanded="true" signature="192:889" ph="{...}" />
@@ -318,6 +325,42 @@
             </folding>
           </first_editor>
           <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../github.com/fwhezfwhez/HMap/hmap.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="9" lean-forward="true" selection-start-line="0" selection-start-column="9" selection-end-line="0" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example/main.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="52">
+          <caret line="2" column="30" lean-forward="true" selection-start-line="2" selection-start-column="30" selection-end-line="2" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hmap.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1196">
+          <caret line="46" column="31" lean-forward="true" selection-start-line="46" selection-start-column="31" selection-end-line="46" selection-end-column="31" />
+          <folding>
+            <element signature="e#14#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hmap_test.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1820">
+          <caret line="70" column="26" lean-forward="false" selection-start-line="70" selection-start-column="26" selection-end-line="70" selection-end-column="26" />
+          <folding>
+            <element signature="e#14#42#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

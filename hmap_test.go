@@ -1,4 +1,4 @@
-package HashMap
+package HMap
 
 import (
 	"testing"
