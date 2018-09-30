@@ -3,19 +3,35 @@ package HMap
 import (
 	"errors"
 	"fmt"
+	"sync"
 )
 
 type HMap struct {
 	Content map[string]map[string]interface{}
+	M *sync.Mutex
 }
 
-//New a HMap
+// New a HMap
 func New() *HMap {
 	tmp := make(map[string]map[string]interface{}, 0)
-	return &HMap{Content: tmp}
+	return &HMap{
+		Content: tmp,
+		M: &sync.Mutex{},
+	}
 }
 
-//Set by main key and sub key
+// Lock of the map
+func (hm *HMap) GetLock() *sync.Mutex{
+	return hm.M
+}
+func (hm *HMap) Lock() *sync.Mutex{
+	return hm.M
+}
+func (hm *HMap) UnLock() *sync.Mutex{
+	return hm.M
+}
+
+// Set by main key and sub key
 func (hm *HMap) Set(mainKey string, subKey string, value interface{}) {
 	if _, ok := hm.Content[mainKey]; !ok {
 		tmp := make(map[string]interface{}, 0)
@@ -26,7 +42,7 @@ func (hm *HMap) Set(mainKey string, subKey string, value interface{}) {
 	}
 }
 
-//get a value by main key and sub key
+// Get a value by main key and sub key
 func (hm *HMap) Get(mainKey string, subKey string) (interface{}, error) {
 	if _, ok := hm.Content[mainKey]; ok {
 		if _, ok2 := hm.Content[mainKey][subKey]; ok2 {
@@ -39,7 +55,7 @@ func (hm *HMap) Get(mainKey string, subKey string) (interface{}, error) {
 	}
 }
 
-//get values array by main key
+// Get values array by main key
 func (hm *HMap) GetByMainKey(mainKey string) ([]interface{}, error) {
 	if _, ok := hm.Content[mainKey]; !ok {
 		return nil, errors.New("no such mainKey key " + mainKey)
@@ -52,7 +68,7 @@ func (hm *HMap) GetByMainKey(mainKey string) ([]interface{}, error) {
 	return rs,nil
 }
 
-//delete a value indexed by main key and sub key
+// Delete a value indexed by main key and sub key
 func (hm *HMap) Delete(mainKey string, subKey string){
 	if _, ok := hm.Content[mainKey]; !ok {
 		return
@@ -65,7 +81,7 @@ func (hm *HMap) Delete(mainKey string, subKey string){
 	}
 }
 
-//delete all datas by mainKey
+// Delete all datas by mainKey
 func (hm *HMap) DeleteByMainKey(mainKey string) {
 	if _, ok := hm.Content[mainKey]; !ok {
 		return
@@ -74,18 +90,18 @@ func (hm *HMap) DeleteByMainKey(mainKey string) {
 	}
 }
 
-//delete all datas in hm
+// Delete all datas in hm
 func (hm *HMap) DeleteAll(){
 	hm.Content = make(map[string]map[string]interface{},0)
 }
 
-//clear a hm
+// Clear a hm
 func (hm *HMap) Clear(){
 	hm.DeleteAll()
 }
 
 
-//print this hm
+// Print this hm
 func (hm *HMap) Print(){
 	fmt.Println("MAIN_KEY|SUB_KEY|VALUE")
 	for k1,v1:=range hm.Content{

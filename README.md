@@ -1,14 +1,17 @@
+## HMap
+[![Godoc](http://img.shields.io/badge/godoc-reference-blue.svg?style=flat)](https://godoc.org/github.com/fwhezfwhez/HMap)
+
 HMap is suited for a map which has two key.
 
-start 
+#### start
 
-**go get github.com/fwhezfwhez/HMap** 
+`go get github.com/fwhezfwhez/HMap`
 
-Example:
+#### Example:
 ```go
 package main
 import (
-	 "github.com/fwhezfwhez/HMap"
+	"github.com/fwhezfwhez/HMap"
 	"fmt"
 	"sync"
 )

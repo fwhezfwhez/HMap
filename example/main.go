@@ -1,8 +1,8 @@
 package main
+
 import (
-	 "github.com/fwhezfwhez/HMap"
 	"fmt"
-	"sync"
+	"github.com/fwhezfwhez/HMap"
 )
 func main() {
 	//init a h-map
@@ -43,8 +43,7 @@ func main() {
 	hm.Clear()
 
 	//about concurrently safe
-	l:=sync.Mutex{}
-	l.Lock()
+	hm.Lock()
 	//do sth with hm
-	l.Unlock()
+	hm.UnLock()
 }
