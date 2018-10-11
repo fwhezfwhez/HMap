@@ -25,9 +25,11 @@ func (hm *HMap) GetLock() *sync.Mutex{
 	return hm.M
 }
 func (hm *HMap) Lock() *sync.Mutex{
+	hm.M.Lock()
 	return hm.M
 }
 func (hm *HMap) UnLock() *sync.Mutex{
+	hm.M.Unlock()
 	return hm.M
 }
 
