@@ -35,6 +35,17 @@ func (hm *HMap) UnLock() *sync.Mutex {
 	return hm.M
 }
 
+// Set  key-value for context
+func (hm *HMap) SetContext(key string, value interface{}) {
+	hm.Context[key] = value
+}
+
+// Get value by key of context
+func (hm *HMap) GetContext(key string) interface{}{
+	return hm.Context[key]
+}
+
+
 // Set by main key and sub key
 func (hm *HMap) Set(mainKey string, subKey string, value interface{}) {
 	if _, ok := hm.Content[mainKey]; !ok {
