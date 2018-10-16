@@ -41,8 +41,9 @@ func (hm *HMap) SetContext(key string, value interface{}) {
 }
 
 // Get value by key of context
-func (hm *HMap) GetContext(key string) interface{}{
-	return hm.Context[key]
+func (hm *HMap) GetContext(key string) (interface{},bool){
+	v,ok:= hm.Context[key]
+	return v,ok
 }
 
 
