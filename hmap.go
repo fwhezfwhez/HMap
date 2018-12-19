@@ -9,46 +9,55 @@ import (
 type HMap struct {
 	Content map[string]map[string]interface{}
 	Context map[string]interface{}
-	M       *sync.Mutex
+	M       *sync.RWMutex
 }
 
-// New a HMap
+// New a HMap without lock
 func New() *HMap {
 	tmp := make(map[string]map[string]interface{}, 0)
 	return &HMap{
 		Content: tmp,
-		M:       &sync.Mutex{},
 		Context: make(map[string]interface{}, 0),
+		M:       nil,
 	}
 }
 
-// Lock of the map
-func (hm *HMap) GetLock() *sync.Mutex {
-	return hm.M
-}
-func (hm *HMap) Lock() *sync.Mutex {
-	hm.M.Lock()
-	return hm.M
-}
-func (hm *HMap) UnLock() *sync.Mutex {
-	hm.M.Unlock()
-	return hm.M
+// New a HMap with lock specific, if 'mutex' is nil,then it works as 'New()', which is not concurrently safe
+func Default (mutex *sync.RWMutex) *HMap {
+	tmp := make(map[string]map[string]interface{}, 0)
+	return &HMap{
+		Content: tmp,
+		Context: make(map[string]interface{}, 0),
+		M:       mutex,
+	}
 }
 
 // Set  key-value for context
 func (hm *HMap) SetContext(key string, value interface{}) {
+	if hm.M != nil {
+		hm.M.Lock()
+		defer hm.M.Unlock()
+	}
 	hm.Context[key] = value
 }
 
 // Get value by key of context
-func (hm *HMap) GetContext(key string) (interface{},bool){
-	v,ok:= hm.Context[key]
-	return v,ok
+func (hm *HMap) GetContext(key string) (interface{}, bool) {
+	if hm.M != nil {
+		hm.M.RLock()
+		defer hm.M.RUnlock()
+	}
+	v, ok := hm.Context[key]
+	return v, ok
 }
-
 
 // Set by main key and sub key
 func (hm *HMap) Set(mainKey string, subKey string, value interface{}) {
+	if hm.M != nil {
+		hm.M.Lock()
+		defer hm.M.Unlock()
+	}
+
 	if _, ok := hm.Content[mainKey]; !ok {
 		tmp := make(map[string]interface{}, 0)
 		tmp[subKey] = value
@@ -60,6 +69,11 @@ func (hm *HMap) Set(mainKey string, subKey string, value interface{}) {
 
 // Get a value by main key and sub key
 func (hm *HMap) Get(mainKey string, subKey string) (interface{}, error) {
+	if hm.M != nil {
+		hm.M.RLock()
+		defer hm.M.RUnlock()
+	}
+
 	if _, ok := hm.Content[mainKey]; ok {
 		if _, ok2 := hm.Content[mainKey][subKey]; ok2 {
 			return hm.Content[mainKey][subKey], nil
@@ -73,10 +87,15 @@ func (hm *HMap) Get(mainKey string, subKey string) (interface{}, error) {
 
 // Get values array by main key
 func (hm *HMap) GetByMainKey(mainKey string) ([]interface{}, error) {
+	if hm.M != nil {
+		hm.M.RLock()
+		defer hm.M.RUnlock()
+	}
+
 	if _, ok := hm.Content[mainKey]; !ok {
 		return nil, errors.New("no such mainKey key " + mainKey)
 	}
-	rs := make([]interface{}, 0)
+	rs := make([]interface{}, 0, 5)
 	tmp := hm.Content[mainKey]
 	for _, v := range tmp {
 		rs = append(rs, v)
@@ -86,6 +105,11 @@ func (hm *HMap) GetByMainKey(mainKey string) ([]interface{}, error) {
 
 // Delete a value indexed by main key and sub key
 func (hm *HMap) Delete(mainKey string, subKey string) {
+	if hm.M != nil {
+		hm.M.Lock()
+		defer hm.M.Unlock()
+	}
+
 	if _, ok := hm.Content[mainKey]; !ok {
 		return
 	} else {
@@ -99,6 +123,11 @@ func (hm *HMap) Delete(mainKey string, subKey string) {
 
 // Delete all datas by mainKey
 func (hm *HMap) DeleteByMainKey(mainKey string) {
+	if hm.M != nil {
+		hm.M.Lock()
+		defer hm.M.Unlock()
+	}
+
 	if _, ok := hm.Content[mainKey]; !ok {
 		return
 	} else {
@@ -108,6 +137,10 @@ func (hm *HMap) DeleteByMainKey(mainKey string) {
 
 // Delete all datas in hm
 func (hm *HMap) DeleteAll() {
+	if hm.M != nil {
+		hm.M.Lock()
+		defer hm.M.Unlock()
+	}
 	hm.Content = make(map[string]map[string]interface{}, 0)
 }
 
@@ -118,6 +151,11 @@ func (hm *HMap) Clear() {
 
 // Print this hm
 func (hm *HMap) Print() {
+	if hm.M != nil {
+		hm.M.RLock()
+		defer hm.M.RUnlock()
+	}
+
 	fmt.Println("MAIN_KEY|SUB_KEY|VALUE")
 	for k1, v1 := range hm.Content {
 		for k2, v2 := range v1 {
