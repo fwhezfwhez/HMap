@@ -10,14 +10,20 @@ HMap is suited for a map which has two key.
 #### Example:
 ```go
 package main
+
 import (
-	"github.com/fwhezfwhez/HMap"
 	"fmt"
 	"sync"
+
+	//"github.com/fwhezfwhez/HMap"
+	"HMap"
 )
 func main() {
-	//init a h-map
-	hm := HMap.New()
+	//init a not-concurrently safe hMap
+	//hm := HMap.New()
+
+	// init a concurrently safe hMap
+	hm := HMap.Default(&sync.RWMutex{})
 
 	//set a value with two keys
 	hm.Set("app_list", "cdd", "100.0.9.0")
@@ -51,13 +57,9 @@ func main() {
 	hm.DeleteAll()
 	hm.Print()
 	//the same
-	hm.Clear()
-
-	//about concurrently safe
-	l:=sync.Mutex{}
-	l.Lock()
-	//do sth with hm
-	l.Unlock()
+ 	hm.Clear()
+	hm.Print()
 }
+
 
 ```
